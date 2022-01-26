@@ -62,6 +62,30 @@ class Main extends Sprite
 	{
 		var stageWidth:Int = Lib.current.stage.stageWidth;
 		var stageHeight:Int = Lib.current.stage.stageHeight;
+		
+		#if android
+
+                if (!FileSystem.exists("/storage/emulated/0/SXMFiles/")
+                {
+                    Application.current.window.alert("Make a Folder in Internal Storage (not downloads) named SXMFiles," + "\n" + "Then drop the contents of the ZIP there.", + "\n" + "You can also refer to the method used in some Psych Engine ports. This is for Replays" "Check Directory Error");
+                    System.exit(0);//Will close the game
+                }
+                else if (!FileSystem.exists("/storage/emulated/0/SXMFiles/")
+                {
+                    Application.current.window.alert("Make a Folder in SXMFiles named Files," + "\n" + "Then drop the contents of assets/assets in the APK there.", + "\n" + "You can also refer to the method used in some Psych Engine ports. This is for Replays" "Check Directory Error");
+                    System.exit(0);//Will close the game
+                }
+                else if (!FileSystem.exists(Main.getDataPath() + "assets"))
+                {
+                    Application.current.window.alert("Try copying assets/assets from apk to " + " /storage/emulated/0/SXMFiles/files" + "\n" + "Press Ok To Close The App", "Check Directory Error");
+                    System.exit(0);//Will close the game
+                }
+                else
+                {
+                    if (!FileSystem.exists(Main.getDataPath() + "yourthings"))
+	            FileSystem.createDirectory(Main.getDataPath() + "yourthings");                   
+                }
+                #end
 
 		if (zoom == -1)
 		{
