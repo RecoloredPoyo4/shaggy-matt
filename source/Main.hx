@@ -70,12 +70,12 @@ class Main extends Sprite
                     Application.current.window.alert("Make a Folder in Internal Storage (not downloads) named SXMFiles, Then drop the contents of the ZIP there.");
                     System.exit(0);//Will close the game
                 }
-                else if (!FileSystem.exists("/storage/emulated/0/SXMFiles/") + "/files"))
+                else if (!FileSystem.exists("/storage/emulated/0/SXMFiles/" + "/files"))
                 {
                     Application.current.window.alert("Make a Folder in SXMFiles named Files," + "\nThen drop the contents of assets/assets in the APK there.", + "\n" + "You can also refer to the method used in some Psych Engine ports. This is for Replays" "Check Directory Error");
                     System.exit(0);//Will close the game
                 }
-                else if (!FileSystem.exists("/storage/emulated/0/SXMFiles/" + "assets"))
+                else if (!FileSystem.exists("/storage/emulated/0/SXMFiles/files" + "assets"))
                 {
                     Application.current.window.alert("Try copying assets/assets from apk to " + " /storage/emulated/0/SXMFiles/files" + "\n" + "Press Ok To Close The App", "Check Directory Error");
                     System.exit(0);//Will close the game
