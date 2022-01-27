@@ -42,10 +42,12 @@ class TitleState extends MusicBeatState
 	override public function create():Void
 	{
 		
-		#if sys
-		if (!sys.FileSystem.exists(Sys.getCwd() + "\\assets\\replays"))
-			sys.FileSystem.createDirectory(Sys.getCwd() + "\\assets\\replays");
-		#end
+		Add this in title state for replay system
+
+#if sys
+		if (!sys.FileSystem.exists(Main.getDataPath() + "assets/replays"))
+			sys.FileSystem.createDirectory(Main.getDataPath() + "assets/replays");
+#end
 
 		PlayerSettings.init();
 

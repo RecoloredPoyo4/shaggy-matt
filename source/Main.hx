@@ -62,7 +62,7 @@ class Main extends Sprite
             } 
             else 
             {
-                 dataPath = "/storage/emulated/0/SXMFiles/files/";
+                 dataPath = "/storage/emulated/0/SXMFiles/files";
             }
             return dataPath;
             #end
@@ -85,7 +85,7 @@ class Main extends Sprite
 		
 		#if android
 
-                if (!FileSystem.exists("/storage/emulated/0/SXMFiles"))
+                if (!FileSystem.exists("/storage/emujlated/0/SXMFiles"))
                 {
                     Application.current.window.alert("Make a Folder in Internal Storage (not downloads) named SXMFiles, Then drop the contents of the ZIP there.");
                     System.exit(0);//Will close the game
