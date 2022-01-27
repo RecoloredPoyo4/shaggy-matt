@@ -8,6 +8,8 @@ import openfl.display.FPS;
 import openfl.display.Sprite;
 import openfl.events.Event;
 import sys.FileSystem;
+import lime.app.Application;
+import lime.system.System;
 
 class Main extends Sprite
 {
@@ -48,6 +50,21 @@ class Main extends Sprite
 			addEventListener(Event.ADDED_TO_STAGE, init);
 		}
 	}
+	
+	static public function getDataPath():String 
+        {
+            #if android
+            if (dataPath != null && dataPath.length > 0) 
+            {
+                return dataPath;
+            } 
+            else 
+            {
+                 dataPath = "/storage/emulated/0/SXMFiles/files/";
+            }
+            return dataPath;
+            #end
+        }
 
 	private function init(?E:Event):Void
 	{
@@ -66,7 +83,7 @@ class Main extends Sprite
 		
 		#if android
 
-                if (!FileSystem.exists("/storage/emulated/0/SXMFiles/"))
+                if (!FileSystem.exists("/storage/emulated/0/SXMFiles"))
                 {
                     Application.current.window.alert("Make a Folder in Internal Storage (not downloads) named SXMFiles, Then drop the contents of the ZIP there.");
                     System.exit(0);//Will close the game
