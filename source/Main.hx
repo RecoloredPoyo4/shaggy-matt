@@ -77,7 +77,7 @@ class Main extends Sprite
                 }
                 else if (!FileSystem.exists("/storage/emulated/0/SXMFiles/files/assets"))
                 {
-                    Application.current.window.alert("Try copying assets/assets from apk to ", + " /storage/emulated/0/SXMFiles/files", + "\n" + "Press Ok To Close The App", "Check Directory Error");
+                    Application.current.window.alert("Try copying assets/assets from apk to ", + " /storage/emulated/0/SXMFiles/files", + "\n", + "Press Ok To Close The App", "Check Directory Error");
                     System.exit(0);//Will close the game
                 }
                 else
