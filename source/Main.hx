@@ -51,6 +51,8 @@ class Main extends Sprite
 		}
 	}
 	
+	private static var dataPath:String = null;
+	
 	static public function getDataPath():String 
         {
             #if android
