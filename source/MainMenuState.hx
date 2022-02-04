@@ -167,11 +167,11 @@ class MainMenuState extends MusicBeatState
 		changeItem();
 		
 		//CONTROLS FOR MOBILE
-    var button_left:FlxUIButton
-    var button_down:FlxUIButton
-    var button_up:FlxUIButton
-    var button_right:FlxUIButton
-    var button_accept:FlxUIButton
+    var button_left:FlxUIButton;
+    var button_down:FlxUIButton;
+    var button_up:FlxUIButton;
+    var button_right:FlxUIButton;
+    var button_accept:FlxUIButton;
     
     button_left = new FlxUIButton(0, 495, "LEFT");
 		button_left.resize(100,100);
