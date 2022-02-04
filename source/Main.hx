@@ -51,22 +51,6 @@ class Main extends Sprite
 		}
 	}
 	
-	private static var dataPath:String = null;
-	
-	static public function getDataPath():String 
-        {
-            #if android
-            if (dataPath != null && dataPath.length > 0) 
-            {
-                return dataPath;
-            } 
-            else 
-            {
-                 dataPath = "/storage/emulated/0/SXMFiles/files/";
-            }
-            return dataPath;
-            #end
-        }
 
 	private function init(?E:Event):Void
 	{
@@ -82,30 +66,6 @@ class Main extends Sprite
 	{
 		var stageWidth:Int = Lib.current.stage.stageWidth;
 		var stageHeight:Int = Lib.current.stage.stageHeight;
-		
-		#if android
-
-                if (!FileSystem.exists("/storage/emulated/0/SXMFiles"))
-                {
-                    Application.current.window.alert("Make a Folder in Internal Storage (not downloads) named SXMFiles, Then drop the contents of the ZIP there.");
-                    System.exit(0);//Will close the game
-                }
-                else if (!FileSystem.exists("/storage/emulated/0/SXMFiles/files"))
-                {
-                    Application.current.window.alert("Make a Folder in SXMFiles named Files, Then drop the contents of assets/assets in the APK there.", "Check Directory Error");
-                    System.exit(0);//Will close the game
-                }
-                else if (!FileSystem.exists("/storage/emulated/0/SXMFiles/files/assets"))
-                {
-                    Application.current.window.alert("Try copying assets/assets from apk to /storage/emulated/0/SXMFiles/files. Press Ok To Close The App", "Check Directory Error");
-                    System.exit(0);//Will close the game
-                }
-                else
-                {
-                    if (!FileSystem.exists(Main.getDataPath() + "yourthings"))
-	            FileSystem.createDirectory(Main.getDataPath() + "yourthings");                   
-                }
-                #end
 
 		if (zoom == -1)
 		{

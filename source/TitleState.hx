@@ -41,11 +41,6 @@ class TitleState extends MusicBeatState
 
 	override public function create():Void
 	{
-#if sys
-		if (!sys.FileSystem.exists(Main.getDataPath() + "assets/replays"))
-			sys.FileSystem.createDirectory(Main.getDataPath() + "assets/replays");
-#end
-
 		PlayerSettings.init();
 
 		curWacky = FlxG.random.getObject(getIntroTextShit());
