@@ -186,8 +186,8 @@ class MainMenuState extends MusicBeatState
 			FlxG.fullscreen = !FlxG.fullscreen;
 		}
 
-		if (controls.RIGHT_P || button_right.justPressed) diff ++;
-		if (controls.LEFT_P || button_left.justPressed) diff --;
+		if (controls.RIGHT_P) diff ++;
+		if (controls.LEFT_P) diff --;
 		if (diff < 0) diff = 1;
 		if (diff > 1) diff = 0;
 
@@ -196,13 +196,13 @@ class MainMenuState extends MusicBeatState
 
 		if (!selectedSomethin)
 		{
-			if (controls.UP_P || button_up.justPressed)
+			if (controls.UP_P)
 			{
 				FlxG.sound.play(Paths.sound('scrollMenu'));
 				changeItem(-1);
 			}
 
-			if (controls.DOWN_P || button_down.justPressed)
+			if (controls.DOWN_P)
 			{
 				FlxG.sound.play(Paths.sound('scrollMenu'));
 				changeItem(1);
@@ -213,7 +213,7 @@ class MainMenuState extends MusicBeatState
 				FlxG.switchState(new TitleState());
 			}
 
-			if (controls.ACCEPT || button_accept.justPressed)
+			if (controls.ACCEPT)
 			{
 				if (optionShit[curSelected] == 'donate')
 				{
