@@ -168,41 +168,7 @@ class MainMenuState extends MusicBeatState
 		changeItem();
 		
 		//CONTROLS FOR MOBILE
-    var button_left:FlxUIButton;
-    var button_down:FlxUIButton;
-    var button_up:FlxUIButton;
-    var button_right:FlxUIButton;
-    var button_accept:FlxUIButton;
     
-    button_left = new FlxUIButton(0, 495, "LEFT");
-		button_left.resize(100,100);
-		button_left.setLabelFormat("VCR OSD Mono",24,FlxColor.BLACK,"center");
-		
-    button_down = new FlxUIButton(100, 495, "DOWN");
-		button_down.resize(100,100);
-		button_down.setLabelFormat("VCR OSD Mono",24,FlxColor.BLACK,"center");
-		
-		button_up = new FlxUIButton(200, 495, "UP");
-		button_up.resize(100,100);
-		button_up.setLabelFormat("VCR OSD Mono",24,FlxColor.BLACK,"center");
-		
-		button_down = new FlxUIButton(300, 495, "RIGHT");
-		button_down.resize(100,100);
-		button_down.setLabelFormat("VCR OSD Mono",24,FlxColor.BLACK,"center");
-
-    button_accept = new FlxUIButton(1140, 495, "ACCEPT");
-		button_accept.resize(100,100);
-		button_accept.setLabelFormat("VCR OSD Mono",24,FlxColor.BLACK,"center");
-		
-		add(button_left);
-		add(button_down);
-		add(button_up);
-		add(button_right);
-		add(button_accept);
-
-
-
-
 		super.create();
 	}
 
