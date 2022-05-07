@@ -73,6 +73,10 @@ class OptionsMenu extends MusicBeatState
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
+  
+    #if android
+	addVirtualPad(FULL, A_B);
+  #end
 
 		super.create();
 	}
